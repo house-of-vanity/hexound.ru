@@ -42,3 +42,8 @@ include('library.php');
     <?php include('upload.php');?>
   </div>
 </div>
+<iframe name='player' id="iframe" src="simplePlayer/index.html" style="border:none;width:100%;height:500px;"></iframe>
+  <script>
+      iframe.contentWindow.postMessage('123', '*');
+  </script>
+
