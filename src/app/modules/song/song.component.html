@@ -1,0 +1,16 @@
+<div style="text-align: center">
+  <table style="margin: 0 auto" *ngFor="let song of commonService.songArray" class="mat-elevation-z8">
+
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Time</th>
+    </tr>
+      <tr>
+        <td> {{song.id}} </td>
+        <td style="width: 500px; text-align: center"> {{song.songName}} </td>
+        <td> {{song.time}} </td>
+      </tr>
+
+  </table>
+</div>
