@@ -8,6 +8,8 @@ import {CommonService} from '../../services/common.service';
 })
 export class SongComponent implements OnInit {
 
+  displayedColumns: string[] = ['No.', 'Name', 'Time'];
+
   constructor(
     public commonService: CommonService,
   ) { }

@@ -2,6 +2,15 @@ table {
   border: 1px solid black;
 }
 
+.customTable {
+  margin: 0 auto;
+  border: none;
+  background: #4242424f;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6) !important;
+  -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
 // SPINNER
 .lds-roller {
   margin: 0 auto;

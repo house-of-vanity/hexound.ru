@@ -3,21 +3,33 @@
       [infiniteScrollDistance]="0.01"
       [infiniteScrollThrottle]="1000"
       (scrolled)="commonService.onScroll()"
-      style="text-align: center; overflow-y: auto; margin-bottom: 100px">
-  <table style="margin: 0 auto" *ngFor="let song of commonService.songArray" class="mat-elevation-z8">
+      style="text-align: center; overflow-y: auto; margin-bottom: 20px; background: darkgrey;">
 
-    <tr>
-      <th>No.</th>
-      <th>Name</th>
-      <th>Time</th>
-    </tr>
-      <tr>
-        <td> {{song.id}} </td>
-        <td style="width: 500px; text-align: center"> {{song.songName}} </td>
-        <td> {{song.time}} </td>
-      </tr>
+  <table mat-table [dataSource]="commonService.songArray" class="mat-elevation-z8 customTable">
 
-  </table>
+  <ng-container matColumnDef="No.">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> Name </th>
+    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.songName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Time">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center"> Time </th>
+    <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+
+
 </div>
 <div *ngIf="commonService.flagSpinner" class="spinner">
   <div class="lds-roller">
