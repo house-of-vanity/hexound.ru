@@ -58,7 +58,7 @@ export class RestService {
   // Get запрос
   get(url, data = {}, headers={}): Observable<any> {
     if (Object.keys(data).length) {
-      url = url + "?" + Object.entries(data).map(([k, v]) => {return `${k}=${v}`}).join(";")
+      url = url + "?" + Object.entries(data).map(([k, v]) => {return `${k}=${v}`}).join("&")
     }
     this.flagLoading = true;
     return this.http.get(encodeURI(url), new RequestOptions({headers: this.getHeaders(headers)}))

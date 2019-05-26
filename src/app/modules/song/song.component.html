@@ -1,4 +1,9 @@
-<div style="text-align: center">
+<div
+      infiniteScroll
+      [infiniteScrollDistance]="0.01"
+      [infiniteScrollThrottle]="1000"
+      (scrolled)="commonService.onScroll()"
+      style="text-align: center; overflow-y: auto; margin-bottom: 100px">
   <table style="margin: 0 auto" *ngFor="let song of commonService.songArray" class="mat-elevation-z8">
 
     <tr>
@@ -13,4 +18,16 @@
       </tr>
 
   </table>
+</div>
+<div *ngIf="commonService.flagSpinner" class="spinner">
+  <div class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </div>
