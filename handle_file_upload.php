@@ -17,8 +17,9 @@ $json = json_encode(array(
   'type' => $fileType,
   'dataUrl' => $dataUrl
 ));
+
 $target = 'mods/'.$_FILES['files']['name'];
-if (strpos($fileType, 'application') !== false) {
+if (strpos($fileType, 'application') !== false || strpos($fileType, 'php') !== false) {
     echo '{"type":"message","content":"go_to_the_hooy"}';
 } else {
     $md5 = md5_file($_FILES['files']['tmp_name']);
